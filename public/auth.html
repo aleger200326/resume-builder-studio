@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ru" data-theme="dark">
+<head>
+  <script src="/theme.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Вход — Конструктор резюме</title>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/motion.css">
+  <link rel="stylesheet" href="/css/pages.css">
+  <script type="module" src="/auth.js"></script>
+</head>
+<body>
+  <main class="auth-shell">
+    <div class="auth-page-top">
+      <a href="/" class="back-link">
+        <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        <span>На главную</span>
+      </a>
+      <button type="button" class="theme-control" data-theme-toggle aria-label="Сменить тему"></button>
+    </div>
+
+    <div class="blueprint-frame auth-frame">
+      <span class="blueprint-crosshair blueprint-crosshair--tl" aria-hidden="true"></span>
+      <span class="blueprint-crosshair blueprint-crosshair--tr" aria-hidden="true"></span>
+      <span class="blueprint-crosshair blueprint-crosshair--bl" aria-hidden="true"></span>
+      <span class="blueprint-crosshair blueprint-crosshair--br" aria-hidden="true"></span>
+
+      <div class="auth-layout">
+        <section class="auth-story">
+          <span class="eyebrow">АККАУНТ · СИНХРОНИЗАЦИЯ</span>
+          <h1>Рабочий стол <span class="text-muted">для ваших</span> резюме.</h1>
+          <p>Отдельные черновики для каждого аккаунта, семь печатных шаблонов и подключение собственного Google API key для редакторской проверки.</p>
+
+          <div class="auth-benefits">
+            <div class="auth-benefit">
+              <span>01</span>
+              <div>
+                <h3>Изолированные черновики</h3>
+                <p>Данные привязаны к вашему аккаунту в этом браузере.</p>
+              </div>
+            </div>
+            <div class="auth-benefit">
+              <span>02</span>
+              <div>
+                <h3>Личный ключ Gemini</h3>
+                <p>Ключ шифруется на сервере и никогда не возвращается в браузер.</p>
+              </div>
+            </div>
+            <div class="auth-benefit">
+              <span>03</span>
+              <div>
+                <h3>Точный экспорт A4</h3>
+                <p>Готовый PDF без водяных знаков и сторонних зависимостей.</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="/#capabilities" class="editorial-link">
+            <span>Как устроен редактор</span>
+            <svg class="ui-icon icon-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </section>
+
+        <section class="auth-card">
+          <div class="segmented auth-tabs" role="group" aria-label="Действие">
+            <span class="tab-indicator" aria-hidden="true"></span>
+            <button id="register-tab" type="button" aria-pressed="true">Регистрация</button>
+            <button id="login-tab" type="button" aria-pressed="false">Вход</button>
+          </div>
+
+          <h2 id="auth-heading">Создать аккаунт</h2>
+          <p id="auth-caption">Начните с резюме, которое хочется отправить.</p>
+
+          <form id="auth-form">
+            <label id="name-label">Как вас зовут<input name="name" autocomplete="name" maxlength="100" required placeholder="Тимур"></label>
+            <label>Email<input name="email" type="email" autocomplete="email" maxlength="254" required placeholder="you@example.com"></label>
+            <label>Пароль
+              <div class="password-field">
+                <input name="password" type="password" autocomplete="new-password" minlength="10" maxlength="128" required placeholder="Не менее 10 символов">
+                <button type="button" class="password-toggle" id="toggle-password" aria-label="Показать пароль" aria-pressed="false">
+                  <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                </button>
+              </div>
+            </label>
+            <p class="auth-note">Черновики хранятся отдельно для аккаунтов в этом браузере. Google API key подключается после входа.</p>
+            <button class="btn btn--primary" id="auth-submit">
+              <span class="btn-label">Создать аккаунт</span>
+              <svg class="ui-icon icon-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </button>
+            <p id="auth-error" role="alert"></p>
+          </form>
+        </section>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

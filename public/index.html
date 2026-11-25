@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="ru" data-theme="dark">
+<head>
+  <script src="/theme.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Заполните резюме, выберите оформление и скачайте PDF.">
+  <title>Конструктор резюме</title>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/motion.css">
+  <link rel="stylesheet" href="/css/pages.css">
+  <link rel="stylesheet" href="/resume-designs.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <div class="account-bar">
+    <span id="account-name"></span>
+    <div>
+      <a class="account-settings-link" href="/settings">Настройки аккаунта</a>
+      <button id="account-settings" type="button">Google API key</button>
+      <button id="logout" type="button">Выйти</button>
+    </div>
+  </div>
+
+  <header class="top">
+    <div class="top-inner">
+      <a class="brand" href="/" aria-label="Конструктор резюме">
+        <span class="brand-monogram" aria-hidden="true">КР</span>
+        <span>Конструктор резюме</span>
+      </a>
+
+      <div class="top-actions">
+        <span id="save" role="status">Загружаем черновик…</span>
+        <button id="theme" data-theme-toggle class="theme-control" aria-label="Сменить тему"></button>
+        <button class="primary desktop-download" type="button" data-download>
+          <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          <span>Скачать PDF</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="product-views" aria-label="Режим работы">
+    <div class="product-views-tabs">
+      <button type="button" id="view-editor" aria-pressed="true">
+        <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>
+        <span>Моё резюме</span>
+      </button>
+      <button type="button" id="view-example" aria-pressed="false">
+        <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        <span>Пример с фото · 12 дизайнов</span>
+      </button>
+      <button type="button" id="view-jobs" aria-pressed="false">
+        <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+        <span>Портфолио и отклики</span>
+      </button>
+    </div>
+
+    <div class="segmented workspace-tabs tabs workspace-tabs-wrap" role="group" aria-label="Режим отображения">
+      <span class="tab-indicator" aria-hidden="true"></span>
+      <button type="button" data-tab="editor" aria-pressed="false">Редактор</button>
+      <button type="button" data-tab="split" aria-pressed="true">Вместе</button>
+      <button type="button" data-tab="preview" aria-pressed="false">Предпросмотр</button>
+    </div>
+  </nav>
+
+  <section class="showroom" id="showroom" hidden aria-labelledby="showroom-title">
+    <div class="showroom-intro">
+      <span class="small-label">КОЛЛЕКЦИЯ ШАБЛОНОВ</span>
+      <h1 id="showroom-title">Один человек. Двенадцать разных композиций.</h1>
+      <p>Полностью заполненное резюме Тимура Рахимова. Выберите любой дизайн и сравните подачу одного и того же документа.</p>
+    </div>
+    <div class="showroom-layout">
+      <div class="template-gallery" id="template-gallery" aria-label="Выбрать дизайн примера"></div>
+      <div class="demo-preview">
+        <div class="demo-toolbar">
+          <div>
+            <h2 id="demo-template-name">Графит</h2>
+            <span>Тимур Рахимов · Senior Product Designer</span>
+          </div>
+          <div>
+            <button type="button" id="demo-apply" class="secondary">Применить дизайн</button>
+            <button type="button" id="demo-copy" class="primary">Заполнить этим примером</button>
+          </div>
+        </div>
+        <div class="workflow-actions">
+          <button type="button" class="secondary" id="demo-download">
+            <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            <span>Скачать пример PDF</span>
+          </button>
+          <button type="button" class="primary" id="demo-next">
+            <span>Далее: портфолио и площадки</span>
+            <svg class="ui-icon icon-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+        <div class="demo-canvas">
+          <div id="demo-paper"></div>
+        </div>
+        <p class="demo-note">Учебный пример: опыт и контакты вымышлены, портрет сгенерирован. Ваш черновик не меняется при просмотре шаблонов.</p>
+        <p id="demo-message" class="demo-note demo-message" role="status"></p>
+      </div>
+    </div>
+  </section>
+
+  <main class="workspace" data-tab="split">
+    <div class="editor">
+      <section class="intro">
+        <span class="small-label">ВЕРСТАЛЬНЫЙ СТОЛ</span>
+        <h1>Данные резюме</h1>
+        <p>Заполните разделы слева и проверяйте вёрстку листа A4 в реальном времени.</p>
+        <button type="button" id="load-example" class="secondary example-load">Пример: Тимур Рахимов</button>
+        <div id="example-notice" class="example-notice" hidden>
+          <p>Демонстрационные данные: Тимур Рахимов, Ташкент, Узбекистан. Контакты и названия частных компаний вымышлены для безопасности — замените их перед отправкой.</p>
+          <button type="button" class="text-button" id="undo-example" hidden>Вернуть мой черновик</button>
+        </div>
+      </section>
+
+      <form id="form" novalidate>
+        <section class="form-section" aria-labelledby="main-heading">
+          <div class="section-heading-row">
+            <span class="section-num">01</span>
+            <h2 id="main-heading">Основные данные</h2>
+          </div>
+          <div id="photo"></div>
+          <div class="pair">
+            <label>Имя и фамилия <span aria-hidden="true">*</span><input required data-path="fullName" autocomplete="name" maxlength="120" placeholder="Анна Иванова"></label>
+            <label>Желаемая должность <span aria-hidden="true">*</span><input required data-path="targetRole" maxlength="120" placeholder="Менеджер по продажам"></label>
+          </div>
+          <div class="pair align">
+            <label>Дата рождения<input data-path="birthDate" type="date" autocomplete="bday"></label>
+            <label class="check"><input type="checkbox" data-path="showBirthDate"> Показывать в резюме</label>
+          </div>
+          <label>О себе<textarea data-path="summary" maxlength="2000" rows="4" placeholder="Специализация и опыт, важные для этой должности"></textarea></label>
+          <div data-suggestion="summary"></div>
+          <div class="inline">
+            <button id="generate" type="button" class="secondary">Сформулировать с ИИ</button>
+            <span id="ai-status" class="field-note" role="status"></span>
+          </div>
+          <div id="ai-hints"></div>
+        </section>
+
+        <section class="form-section" data-review-section="experience">
+          <div class="section-heading-row">
+            <span class="section-num">02</span>
+            <h2>Опыт работы</h2>
+          </div>
+          <div id="experience"></div>
+          <button type="button" class="text-button" data-add="experience">
+            <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+            <span>Добавить место работы</span>
+          </button>
+        </section>
+
+        <section class="form-section" data-review-section="skills">
+          <div class="section-heading-row">
+            <span class="section-num">03</span>
+            <h2>Навыки</h2>
+          </div>
+          <div id="skills"></div>
+          <button type="button" class="text-button" data-add="skills">
+            <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+            <span>Добавить навык</span>
+          </button>
+        </section>
+
+        <section class="form-section" data-review-section="education">
+          <div class="section-heading-row">
+            <span class="section-num">04</span>
+            <h2>Образование</h2>
+          </div>
+          <div id="education"></div>
+          <button type="button" class="text-button" data-add="education">
+            <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+            <span>Добавить образование</span>
+          </button>
+          <label class="check higher"><input type="checkbox" data-path="hasHigherEducation"> Есть высшее образование</label>
+          <div id="higher"></div>
+        </section>
+
+        <section class="form-section">
+          <div class="section-heading-row">
+            <span class="section-num">05</span>
+            <h2>Контакты и портфолио</h2>
+          </div>
+          <p class="field-note">Укажите email, телефон или ссылку на профиль.</p>
+          <div class="pair">
+            <label>Email<input data-path="contacts.email" type="email" autocomplete="email" maxlength="254" placeholder="anna@example.com"></label>
+            <label>Телефон<input data-path="contacts.phone" type="tel" autocomplete="tel" maxlength="40" placeholder="+998 90 123 45 67"></label>
+            <label>Профиль<input data-path="contacts.profileUrl" type="url" maxlength="2048" placeholder="https://…"></label>
+            <label>Город<input data-path="contacts.city" autocomplete="address-level2" maxlength="160"></label>
+          </div>
+          <div id="portfolioUrls"></div>
+          <button type="button" class="text-button" data-add="portfolioUrls">
+            <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+            <span>Добавить ссылку на портфолио</span>
+          </button>
+        </section>
+
+        <section class="form-section ai-coach" id="ai-coach" aria-labelledby="coach-title">
+          <div class="coach-heading">
+            <span class="coach-icon" aria-hidden="true">
+              <svg class="ui-icon ui-icon--lg" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+            </span>
+            <div>
+              <span class="small-label">GEMINI · РЕДАКТОРСКИЙ РАЗБОР</span>
+              <h2 id="coach-title">Взгляд со стороны</h2>
+            </div>
+          </div>
+          <p class="field-note">Оценка структуры и формулировок: работает локально сразу или через Gemini при подключении API-ключа.</p>
+          <div class="review-legend">
+            <span class="weak"><i class="legend-dot" aria-hidden="true"></i> Слабое место</span>
+            <span class="good"><i class="legend-dot" aria-hidden="true"></i> Хорошо</span>
+            <span class="excellent"><i class="legend-dot" aria-hidden="true"></i> Отлично</span>
+          </div>
+          <label class="check">
+            <input type="checkbox" id="review-consent">
+            <span>Разрешаю отправить Google должность, описание, опыт, навыки и образование. Имя, фото и контакты не отправляются.</span>
+          </label>
+          <label for="coach-question">Вопрос редактору (необязательно)</label>
+          <textarea id="coach-question" rows="3" maxlength="2000" placeholder="Например: как описать учебные проекты, если пока нет коммерческого опыта?"></textarea>
+          <button type="button" class="primary" id="review-resume">Проанализировать резюме</button>
+          <p role="status" id="review-status" class="field-note"></p>
+          <div id="review-results" aria-live="polite"></div>
+        </section>
+
+        <footer class="form-footer">
+          <p>Черновик хранится в этом браузере.</p>
+          <button type="button" id="clear" class="text-button">Очистить черновик</button>
+        </footer>
+      </form>
+
+      <div class="mobile-action">
+        <button type="button" class="secondary" data-tab="preview">
+          <span>Посмотреть лист A4</span>
+          <svg class="ui-icon icon-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <aside class="preview" aria-label="Предпросмотр резюме">
+      <div class="preview-head">
+        <h2>Лист резюме</h2>
+        <div id="layouts" class="segments" aria-label="Макет PDF"></div>
+        <button id="zoom-paper" class="secondary" type="button" aria-pressed="false">Увеличить лист</button>
+      </div>
+      <div class="appearance">
+        <fieldset>
+          <legend>Шаблон</legend>
+          <div id="templates" class="templates"></div>
+        </fieldset>
+        <fieldset>
+          <legend>Палитра</legend>
+          <div id="palettes" class="palettes"></div>
+        </fieldset>
+      </div>
+      <div class="stage">
+        <div id="paper"></div>
+      </div>
+      <div class="workflow-actions">
+        <button type="button" class="secondary" data-download>
+          <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          <span>Скачать PDF</span>
+        </button>
+        <button type="button" class="primary" id="resume-next">
+          <span>Далее: портфолио и площадки</span>
+          <svg class="ui-icon icon-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+      <div class="mobile-action">
+        <button type="button" class="primary" data-download>
+          <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          <span>Скачать PDF</span>
+        </button>
+      </div>
+    </aside>
+  </main>
+
+  <section id="jobs-step" class="jobs-step" hidden aria-labelledby="jobs-heading">
+    <div class="jobs-intro">
+      <span class="small-label">СЛЕДУЮЩИЙ ШАГ · ПОИСК РАБОТЫ</span>
+      <h1 id="jobs-heading">Покажите резюме работодателю.</h1>
+      <p>Добавьте ссылки на работы, скачайте PDF и выберите подходящую площадку для отклика.</p>
+    </div>
+    <div class="jobs-layout">
+      <aside class="portfolio-step">
+        <h2 id="portfolio-step-heading">Твоё портфолио</h2>
+        <p>Ссылки на Behance, GitHub, личный сайт или отдельные кейсы попадут в резюме.</p>
+        <div id="step-portfolio-links"></div>
+        <button type="button" class="text-button" id="step-add-link">
+          <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+          <span>Добавить ссылку</span>
+        </button>
+        <div class="portfolio-step-actions">
+          <button type="button" class="primary" id="jobs-download">Скачать моё резюме</button>
+          <p id="jobs-download-status" role="status"></p>
+          <button type="button" class="secondary" id="jobs-back">К шаблону</button>
+        </div>
+        <p class="field-note">Войдите в свой аккаунт на выбранной площадке и прикрепите скачанный PDF или ссылки на работы.</p>
+      </aside>
+
+      <div class="job-directory">
+        <div class="jobs-search-head">
+          <h2>Где искать работу</h2>
+          <span id="jobs-count" role="status"></span>
+        </div>
+        <label class="jobs-search-label">Поиск площадки<input id="jobs-search" type="search" placeholder="Название, страна или направление" maxlength="100"></label>
+        <div id="jobs-filters" class="jobs-filters" role="group" aria-label="Регион и формат работы"></div>
+        <p class="jobs-site-note">Каждая строка открывает сайт вакансий в новой вкладке.</p>
+        <div id="jobs-list" class="jobs-list"></div>
+      </div>
+    </div>
+  </section>
+
+  <dialog id="dialog">
+    <div class="dialog-inner">
+      <button id="close" class="icon close" type="button" aria-label="Закрыть">
+        <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <div id="modal"></div>
+    </div>
+  </dialog>
+</body>
+</html>

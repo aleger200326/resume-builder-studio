@@ -1,0 +1,11 @@
+node_modules/
+.env
+*.pdf
+data/
+.env.*
+.env*
+!.env.example
+test-results/
+.vercel
+Gemini_Generated_Image_*
+

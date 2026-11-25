@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Соберите резюме, выберите оформление из двенадцати издательских макетов A4 и скачайте PDF.">
+  <title>Конструктор резюме</title>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/motion.css">
+  <link rel="stylesheet" href="/css/pages.css">
+  <link rel="stylesheet" href="/resume-designs.css">
+  <script type="module" src="/landing.js"></script>
+</head>
+<body class="landing-page">
+  <a class="skip-link" href="#manifesto">Перейти к содержанию</a>
+
+  <!-- BAND 1: LIGHT STUDIO HERO (MATCHING PHOTO 1) -->
+  <section class="lp-hero-band" id="top" aria-labelledby="hero-title">
+    <div class="lp-wrap">
+      <header class="lp-topbar">
+        <nav class="lp-pill-nav" aria-label="Разделы">
+          <a href="#top" class="is-active">Главная</a>
+          <a href="#templates">Шаблоны</a>
+          <a href="#capabilities">Возможности</a>
+          <a href="#process">Процесс</a>
+          <a href="#faq">Вопросы</a>
+        </nav>
+
+        <div class="lp-topbar-right">
+          <div class="lp-topbar-meta">
+            <span>Ташкент · Узбекистан</span>
+            <span>Формат A4 · PDF 1.7</span>
+          </div>
+          <div id="landing-account" class="landing-account">
+            <a class="lp-login-link" href="/auth?mode=login">Войти</a>
+            <a class="lp-dark-btn" href="/auth">
+              <span>Открыть редактор</span>
+              <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <div class="lp-hero-stage">
+        <!-- Center Seamless Studio Portrait -->
+        <div class="lp-hero-portrait" aria-hidden="true">
+          <img src="/hero-model.jpg" alt="">
+          <div class="lp-portrait-partners">
+            <span>hh.uz</span>
+            <span>hh.ru</span>
+            <span>LinkedIn</span>
+            <span>Habr</span>
+          </div>
+        </div>
+
+        <!-- Left Column -->
+        <div class="lp-hero-left">
+          <div class="lp-title-block hero-stagger-1">
+            <h1 id="hero-title" class="lp-hero-title lp-hero-title--brand">
+              <strong>КОНСТРУКТОР</strong>
+              <span>РЕЗЮМЕ</span>
+            </h1>
+            <span class="lp-year-tag">('26)</span>
+          </div>
+
+          <div class="lp-hero-about hero-stagger-2">
+            <span class="lp-bullet-label"><i aria-hidden="true"></i> (О СЕРВИСЕ)</span>
+            <p>Соберите резюме уровня Middle+ / Senior с живым предпросмотром A4 и точным экспортом в PDF.</p>
+            <a class="lp-dark-btn" href="/editor" data-product-link>
+              <span>Создать резюме</span>
+              <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+
+          <div class="lp-split-card hero-stagger-3">
+            <div class="lp-split-dark">
+              <strong>12</strong>
+              <span>Макетов A4</span>
+              <ul>
+                <li>Живой лист A4</li>
+                <li>Экспорт в PDF</li>
+                <li>ИИ-редактура</li>
+                <li>Локальный черновик</li>
+              </ul>
+              <a class="lp-mini-white-btn" href="/editor?view=example" data-product-link data-product-view="example">Открыть пример</a>
+            </div>
+            <div class="lp-split-photo">
+              <img src="/hero-card-left.jpg" alt="Печатные листы резюме в папке-фолио">
+              <div class="lp-split-photo-caption">
+                <strong>30+</strong>
+                <span>Площадок отклика</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="lp-hero-right">
+          <div class="lp-right-badges hero-stagger-2">
+            <span class="lp-light-pill">
+              <span class="lp-pill-icon" aria-hidden="true">
+                <svg class="ui-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/></svg>
+              </span>
+              <span>Точный формат A4</span>
+            </span>
+
+            <div class="lp-availability">
+              <span>Готово к работе</span>
+              <small><i aria-hidden="true"></i> для вас</small>
+            </div>
+          </div>
+
+          <a class="lp-outnow-card hero-stagger-4" href="#templates">
+            <div class="lp-work-head">
+              <div>
+                <span>Актуально</span>
+                <strong>12 шаблонов A4</strong>
+              </div>
+              <span class="lp-year-pill">2026</span>
+            </div>
+            <div class="lp-outnow-media">
+              <img src="/hero-card-right.jpg" alt="Минималистичные печатные макеты резюме A4 на столе">
+              <span class="lp-outnow-arrow" aria-hidden="true">
+                <svg class="ui-icon" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></svg>
+              </span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BAND 2: SCROLL DIVIDER STRIP -->
+  <div class="lp-scroll-bar">
+    <div class="lp-wrap lp-scroll-inner">
+      <span>ФОРМАТ A4 · PDF 1.7</span>
+      <a href="#manifesto" class="lp-scroll-link">
+        <span>ЛИСТАЙТЕ ВНИЗ</span>
+        <span class="lp-scroll-circle" aria-hidden="true">
+          <svg class="ui-icon" viewBox="0 0 24 24"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+        </span>
+      </a>
+      <span>ТОЧНОСТЬ В ДЕТАЛЯХ</span>
+    </div>
+  </div>
+
+  <!-- BAND 3–8: DEEP BLACK EDITORIAL BODY -->
+  <main class="lp-dark-band">
+    <div class="lp-wrap">
+      <!-- BAND 3: MANIFESTO -->
+      <section id="manifesto" class="lp-manifesto" data-reveal>
+        <h2>
+          Мы верим, что сильное резюме строится через структуру, <span class="lp-muted">а не просто декор. Каждый раздел работает на внимание рекрутера, убедительность фактов и быстрый отклик.</span>
+        </h2>
+        <p class="lp-manifesto-sub">
+          От первого черновика до готового PDF в один клик. <span class="lp-muted">Спроектировано для специалистов, которым важна чистота подачи.</span>
+        </p>
+      </section>
+
+      <!-- BAND 4: FRAMED 3-CARD SHOWCASE (MATCHING PHOTO 1 BOTTOM) -->
+      <section class="lp-trust-frame" data-reveal aria-labelledby="trust-title">
+        <div class="lp-trust-copy">
+          <h2 id="trust-title">
+            Двенадцать макетов и точный экспорт
+            <span class="lp-inline-badge" aria-hidden="true">
+              <svg class="ui-icon" viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M19.07 4.93 4.93 19.07"/></svg>
+            </span>
+          </h2>
+          <p>Один набор фактов автоматически перестраивается под любую композицию A4. Без перевёрстки вручную, сторонних конструкторов и скрытых подписок.</p>
+        </div>
+
+        <div class="lp-trust-cards">
+          <a class="lp-trust-card lp-trust-card--light" href="#templates">
+            <div class="lp-template-chips-mini" aria-hidden="true">
+              <span>Классический</span>
+              <span>Графит</span>
+              <span>Редакционный</span>
+              <span>Архитектор</span>
+              <span>Портфолио</span>
+              <span>Монолит</span>
+              <span>Карьера</span>
+              <span>Скандинавский</span>
+              <span>Обсидиан</span>
+              <span>Ателье</span>
+              <span>Швейцарский</span>
+              <span>Изумруд</span>
+            </div>
+            <div class="lp-trust-metric">
+              <strong>12</strong>
+              <span>Макетов A4</span>
+            </div>
+          </a>
+
+          <a class="lp-trust-card lp-trust-card--dark" href="/editor?view=jobs" data-product-link data-product-view="jobs">
+            <div class="lp-trust-top">
+              <div>
+                <strong>30+</strong>
+                <span>Площадок поиска</span>
+              </div>
+              <span class="lp-award-badge">PDF 1.7</span>
+            </div>
+            <p>Узбекистан, Россия, международные компании и удалённые роли в одном каталоге.</p>
+          </a>
+
+          <a class="lp-trust-card lp-trust-card--photo" href="/editor?view=example" data-product-link data-product-view="example">
+            <img src="/trust-card-right.jpg" alt="Проверка печатного резюме формата A4" loading="lazy">
+            <div class="lp-card-photo-bar">
+              <span>Пример с фото</span>
+              <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- BAND 5: 12-TEMPLATE DIVERSE CANDIDATES GALLERY -->
+      <section id="templates" class="lp-templates-section" aria-labelledby="templates-title">
+        <div class="lp-section-head" data-reveal>
+          <div>
+            <span class="lp-mono-kicker">01 / КОЛЛЕКЦИЯ ИЗ 12 МАКЕТОВ · РАЗНЫЕ ПРОФЕССИИ</span>
+            <h2 id="templates-title">Выберите характер <span class="lp-muted">своего</span> резюме.</h2>
+          </div>
+
+          <div class="lp-filter-pills" id="landing-template-filters" role="group" aria-label="Фильтр макетов">
+            <button type="button" data-tpl-filter="all" aria-pressed="true">Все 12</button>
+            <button type="button" data-tpl-filter="single" aria-pressed="false">Одна колонка</button>
+            <button type="button" data-tpl-filter="two" aria-pressed="false">Две колонки</button>
+            <button type="button" data-tpl-filter="dark" aria-pressed="false">Тёмный лист</button>
+          </div>
+        </div>
+
+        <div class="lp-bento-gallery" id="landing-bento-gallery" data-reveal></div>
+      </section>
+
+      <!-- BAND 6: DEEP PRODUCT BREAKDOWN (3 ALTERNATING ROWS) -->
+      <section id="capabilities" class="lp-deep-section" aria-labelledby="capabilities-title">
+        <div class="lp-section-head" data-reveal>
+          <div>
+            <span class="lp-mono-kicker">02 / АРХИТЕКТУРА ПРОДУКТА</span>
+            <h2 id="capabilities-title">Всё необходимое <span class="lp-muted">на одном верстальном</span> столе.</h2>
+          </div>
+        </div>
+
+        <div class="lp-feature-rows">
+          <!-- Row 1 -->
+          <article class="lp-feature-row" data-reveal>
+            <div class="lp-feature-copy">
+              <span class="lp-mono-kicker">01 · РАЗДЕЛЁННЫЙ РЕДАКТОР И ФОТО</span>
+              <h3>Форма слева и живой лист A4 справа синхронизируются мгновенно.</h3>
+              <p>Редактируйте опыт, навыки, образование и портфолио без перезагрузок. Меняйте порядок записей в один клик, обрезайте фотографию прямо в квадратный кадр и включайте показ даты рождения или вуза только тогда, когда это нужно.</p>
+              <ul class="lp-feature-bullets">
+                <li>Автосохранение черновика в IndexedDB с защитой от конфликта вкладок</li>
+                <li>Встроенная обрезка портрета JPEG / PNG с предпросмотром области</li>
+                <li>Изоляция черновиков между разными аккаунтами браузера</li>
+              </ul>
+            </div>
+            <div class="lp-feature-media">
+              <img src="/hero-studio.jpg" alt="Печатные листы резюме в матовой папке" loading="lazy">
+            </div>
+          </article>
+
+          <!-- Row 2 -->
+          <article class="lp-feature-row lp-feature-row--reverse" data-reveal>
+            <div class="lp-feature-copy">
+              <span class="lp-mono-kicker">02 · РЕДАКТУРА И РАЗБОР С GEMINI</span>
+              <h3>Оценка слабых мест <span class="lp-muted">и улучшение формулировок</span> без выдуманных цифр.</h3>
+              <p>Подключите свой Google API key в настройках аккаунта — помощник оценит 5 ключевых разделов, подскажет уточняющие вопросы и перепишет обязанности с опорой строго на ваши реальные факты.</p>
+              <div class="lp-diff-card">
+                <div class="lp-diff-row lp-diff-row--before">
+                  <span>БЫЛО</span>
+                  <p>«Занимался дизайном платёжного приложения и интерфейсами кабинета.»</p>
+                </div>
+                <div class="lp-diff-row lp-diff-row--after">
+                  <span>СТАЛО · SAMARQAND PAY</span>
+                  <p>«Сократил сценарий переводов с 6 до 3 шагов — конверсия в успешный платёж выросла с 74% до 86%.»</p>
+                </div>
+                <div class="lp-diff-footnote">Имя, фото, дата рождения и контакты исключены из отправки в Google.</div>
+              </div>
+            </div>
+            <div class="lp-feature-media">
+              <img src="/showcase-ai.jpg" alt="Слоистая структура модулей резюме" loading="lazy">
+            </div>
+          </article>
+
+          <!-- Row 3 -->
+          <article class="lp-feature-row" data-reveal>
+            <div class="lp-feature-copy">
+              <span class="lp-mono-kicker">03 · ДВА ФОРМАТА PDF И 30 ПЛОЩАДОК</span>
+              <h3>Векторный PDF 1.7 для HR-почты, печати и чтения с экрана телефона.</h3>
+              <p>Встроенный генератор формирует честный PDF-документ с поддержкой кириллицы, кликабельными ссылками на портфолио и контакты — без сторонних сервисов и серверов.</p>
+              <div class="lp-format-grid">
+                <div class="lp-format-box">
+                  <span class="mono">210 × 297 ММ</span>
+                  <strong>ПК и печать (A4)</strong>
+                  <p>Стандартный лист для откликов на сайтах вакансий и печати.</p>
+                </div>
+                <div class="lp-format-box">
+                  <span class="mono">105 × 186 ММ</span>
+                  <strong>Мобильный PDF</strong>
+                  <p>Крупный кегль для удобного просмотра в Telegram и со смартфона.</p>
+                </div>
+              </div>
+            </div>
+            <div class="lp-feature-media">
+              <img src="/showcase-studio.jpg" alt="Готовые печатные макеты A4 на графитовом столе" loading="lazy">
+            </div>
+          </article>
+        </div>
+
+        <div class="lp-feature-card-panel lp-jobs-preview-strip" data-reveal>
+          <div class="lp-panel-head">
+            <span>КАТАЛОГ ПЛОЩАДОК ДЛЯ ОТКЛИКА</span>
+            <strong>30 сервисов в одном окне</strong>
+          </div>
+          <div class="lp-region-cols">
+            <div><span>Узбекистан</span><small>hh.uz, Ishkop, OLX Работа</small></div>
+            <div><span>Россия и СНГ</span><small>hh.ru, Хабр Карьера, getmatch, SuperJob</small></div>
+            <div><span>Международные</span><small>LinkedIn Jobs, Indeed, Glassdoor, Wellfound</small></div>
+            <div><span>Удалённо</span><small>Remote OK, We Work Remotely, Remotive</small></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BAND 7: 4-STEP WORKFLOW -->
+      <section id="process" class="lp-process-section" aria-labelledby="process-title">
+        <div class="lp-section-head" data-reveal>
+          <div>
+            <span class="lp-mono-kicker">03 / ПОРЯДОК РАБОТЫ</span>
+            <h2 id="process-title">От чистого листа <span class="lp-muted">до готового файла</span> за четыре шага.</h2>
+          </div>
+        </div>
+
+        <ol class="lp-process-grid" data-reveal>
+          <li>
+            <span class="lp-step-num">01</span>
+            <h3>Заполните факты</h3>
+            <p>Укажите должность, опыт, навыки и образование — или загрузите готовый пример Тимура Рахимова.</p>
+          </li>
+          <li>
+            <span class="lp-step-num">02</span>
+            <h3>Усильте формулировки</h3>
+            <p>Проверьте слабые места через встроенный разбор или отредактируйте достижения вручную.</p>
+          </li>
+          <li>
+            <span class="lp-step-num">03</span>
+            <h3>Выберите макет A4</h3>
+            <p>Переключите 12 шаблонов и 3 палитры, контролируя баланс текста на странице.</p>
+          </li>
+          <li>
+            <span class="lp-step-num">04</span>
+            <h3>Скачайте и откликнитесь</h3>
+            <p>Экспортируйте PDF для ПК или телефона и выберите подходящую площадку из 30 доступных.</p>
+          </li>
+        </ol>
+      </section>
+
+      <!-- BAND 8: EXPANDED FAQ + CLOSING CTA + FOOTER -->
+      <section id="faq" class="lp-faq-section" data-reveal aria-labelledby="faq-title">
+        <div class="faq-grid">
+          <div>
+            <span class="lp-mono-kicker">04 / ЧАСТЫЕ ВОПРОСЫ</span>
+            <h2 id="faq-title" class="section-title">Коротко <span class="lp-muted">о безопасности</span> и деталях.</h2>
+            <p style="margin-top:14px;color:#8B909B;font-size:14px;max-width:40ch">Вся вёрстка и сборка PDF происходят прямо у вас в браузере без передачи резюме на сторонние серверы.</p>
+          </div>
+
+          <div class="faq-list">
+            <details>
+              <summary>
+                <span>Где хранятся черновики и персональные данные?</span>
+                <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+              </summary>
+              <p>Черновики сохраняются локально в IndexedDB вашего браузера, изолированно для каждого аккаунта.</p>
+            </details>
+            <details>
+              <summary>
+                <span>Можно ли работать без подключения Google API key?</span>
+                <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+              </summary>
+              <p>Да. Редактор, все 12 шаблонов, обрезка фото и экспорт PDF полностью работают без API-ключа.</p>
+            </details>
+            <details>
+              <summary>
+                <span>Как защищён мой личный Google API key?</span>
+                <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+              </summary>
+              <p>Ключ шифруется на сервере алгоритмом AES-256-GCM с привязкой к вашему аккаунту и никогда не возвращается обратно в браузер.</p>
+            </details>
+            <details>
+              <summary>
+                <span>Какие данные отправляются при ИИ-разборе?</span>
+                <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+              </summary>
+              <p>Только должность, «О себе», опыт, навыки и образование. Имя, фото, дата рождения и контакты исключены из запроса.</p>
+            </details>
+            <details>
+              <summary>
+                <span>Чем отличаются макеты PDF для ПК и телефона?</span>
+                <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+              </summary>
+              <p>Вариант для ПК генерирует стандартный лист A4 (210×297 мм), а мобильный макет собирает узкие страницы (105×186 мм) с крупным шрифтом для чтения в мессенджерах.</p>
+            </details>
+            <details>
+              <summary>
+                <span>Можно ли скрыть дату рождения или высшее образование?</span>
+                <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+              </summary>
+              <p>Да. Оба блока управляются отдельными флажками в форме и не попадают ни в резюме, ни в PDF, ни в анализ.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="lp-closing-banner" data-reveal aria-labelledby="closing-title">
+        <div>
+          <span class="lp-mono-kicker">ГОТОВО К ВЫПУСКУ</span>
+          <h2 id="closing-title">Соберите резюме, <span class="lp-muted">которое хочется открыть</span> на первом экране.</h2>
+        </div>
+        <div class="lp-closing-actions">
+          <a class="lp-white-btn" href="/editor" data-product-link>
+            <span>Открыть редактор</span>
+            <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </a>
+          <a class="lp-ghost-link" href="/editor?view=example" data-product-link data-product-view="example">
+            <span>Посмотреть пример Тимура Рахимова</span>
+            <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </section>
+
+      <footer class="lp-footer">
+        <span>КОНСТРУКТОР РЕЗЮМЕ · ФОРМАТ A4 · PDF 1.7</span>
+        <div>
+          <a href="/editor" data-product-link>Редактор</a>
+          <a href="/editor?view=example" data-product-link data-product-view="example">12 шаблонов</a>
+          <a href="/auth?mode=login">Вход</a>
+          <a href="#top">Наверх</a>
+        </div>
+      </footer>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ru" data-theme="dark">
+<head>
+  <script src="/theme.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Настройки аккаунта — Конструктор резюме</title>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/motion.css">
+  <link rel="stylesheet" href="/css/pages.css">
+  <script type="module" src="/settings.js"></script>
+</head>
+<body>
+  <main class="settings-shell">
+    <nav class="settings-nav" aria-label="Навигация настроек">
+      <div class="settings-nav-links">
+        <a href="/">
+          <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          <span>На главную</span>
+        </a>
+        <a href="/editor">
+          <span>Моё резюме</span>
+          <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <button type="button" class="theme-control" data-theme-toggle aria-label="Сменить тему"></button>
+    </nav>
+
+    <header class="settings-header">
+      <span class="small-label">ЛИЧНЫЙ КАБИНЕТ</span>
+      <h1>Настройки аккаунта</h1>
+      <p class="settings-lead">Профиль на сайте, оформление рабочего стола и зашифрованное подключение к Gemini.</p>
+    </header>
+
+    <div class="settings-layout">
+      <aside class="settings-index" aria-label="Разделы">
+        <a href="#section-profile"><span class="mono">01</span> Профиль</a>
+        <a href="#section-appearance"><span class="mono">02</span> Внешний вид</a>
+        <a href="#section-key"><span class="mono">03</span> Google API key</a>
+        <a href="#section-account"><span class="mono">04</span> Безопасность</a>
+      </aside>
+
+      <div class="settings-sections">
+        <section id="section-profile" class="settings-card">
+          <h2>Профиль</h2>
+          <p>Имя отображается в навигации сайта и не изменяет поля внутри резюме.</p>
+          <form id="profile-form">
+            <label>Имя или ник<input id="profile-name" name="name" maxlength="100" required autocomplete="nickname"></label>
+            <label>Email<input id="profile-email" type="email" readonly></label>
+            <div>
+              <button class="primary" id="profile-save">Сохранить профиль</button>
+            </div>
+            <p id="profile-status" role="status"></p>
+          </form>
+        </section>
+
+        <section id="section-appearance" class="settings-card">
+          <h2>Внешний вид</h2>
+          <p>Выберите тему оформления интерфейса. Лист резюме при этом всегда остаётся в своих печатных пропорциях.</p>
+          <div class="theme-cards">
+            <button type="button" class="theme-choice" data-theme-choice="dark" aria-pressed="true">
+              <div class="theme-swatch-preview theme-swatch-preview--dark" aria-hidden="true">
+                <span class="theme-swatch-bar"></span>
+                <span class="theme-swatch-accent"></span>
+              </div>
+              <strong>Dark Obsidian (по умолчанию)</strong>
+              <span>Графитовый обсидиан и студийный сапфир</span>
+            </button>
+            <button type="button" class="theme-choice" data-theme-choice="light" aria-pressed="false">
+              <div class="theme-swatch-preview theme-swatch-preview--light" aria-hidden="true">
+                <span class="theme-swatch-bar"></span>
+                <span class="theme-swatch-accent"></span>
+              </div>
+              <strong>Light Paper</strong>
+              <span>Архитектурная бумага и сапфир</span>
+            </button>
+          </div>
+        </section>
+
+        <section id="section-key" class="settings-card">
+          <h2>Google API key</h2>
+          <p>Подключите свой ключ, чтобы получать редакторские предложения и анализ структуры резюме.</p>
+          <p><a class="text-button" href="https://aistudio.google.com/apikey" target="_blank" rel="noopener noreferrer">Получить ключ в Google AI Studio</a></p>
+          <form id="key-form">
+            <label>Новый ключ<input id="profile-key" type="password" autocomplete="off" maxlength="2048" placeholder="Вставьте Google API key" required></label>
+            <p class="field-note">Сохранённый ключ шифруется на сервере и не отображается в браузере. Доступна замена или удаление.</p>
+            <div class="settings-actions">
+              <button class="primary" id="key-save">Сохранить ключ</button>
+              <button type="button" class="secondary" id="key-check">Проверить подключение</button>
+              <button type="button" class="secondary" id="key-delete">Удалить ключ</button>
+            </div>
+            <p id="key-state" role="status"></p>
+          </form>
+        </section>
+
+        <section id="section-account" class="settings-card settings-card--danger">
+          <h2>Сессия и выход</h2>
+          <p>Черновики сохраняются отдельно для вашего аккаунта в этом браузере. Вы можете завершить текущую сессию.</p>
+          <button class="btn btn--danger" id="settings-logout" type="button">Выйти из аккаунта</button>
+          <p id="logout-status" role="status"></p>
+        </section>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

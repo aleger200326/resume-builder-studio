@@ -1,0 +1,259 @@
+/* ==========================================================================
+   MOTION — Obsidian & Architectural Precision Motion System
+   ========================================================================== */
+
+html.theme-transitioning,
+html.theme-transitioning body,
+html.theme-transitioning .site-header,
+html.theme-transitioning .editorial-card,
+html.theme-transitioning .auth-card,
+html.theme-transitioning .settings-card,
+html.theme-transitioning .preview,
+html.theme-transitioning .editor {
+  transition:
+    background-color 260ms ease,
+    color 260ms ease,
+    border-color 260ms ease;
+}
+
+/* Hero Entrance Choreography */
+@keyframes hero-enter {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-sheet-enter {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes hero-backing-1 {
+  from {
+    opacity: 0;
+    transform: translate(0, 0) scale(0.96);
+  }
+  to {
+    opacity: 0.52;
+    transform: translate(14px, -12px) scale(0.985);
+  }
+}
+
+@keyframes hero-backing-2 {
+  from {
+    opacity: 0;
+    transform: translate(0, 0) scale(0.94);
+  }
+  to {
+    opacity: 0.28;
+    transform: translate(28px, -24px) scale(0.97);
+  }
+}
+
+.hero-stagger-1 {
+  animation: hero-enter var(--dur-slow) var(--ease-out-expo) 0ms both;
+}
+
+.hero-stagger-2 {
+  animation: hero-enter var(--dur-slow) var(--ease-out-expo) 70ms both;
+}
+
+.hero-stagger-3 {
+  animation: hero-enter var(--dur-slow) var(--ease-out-expo) 140ms both;
+}
+
+.hero-stagger-4 {
+  animation: hero-sheet-enter var(--dur-slow) var(--ease-out-expo) 200ms both;
+}
+
+.hero-layer-back-1 {
+  animation: hero-backing-1 var(--dur-slow) var(--ease-out-expo) 240ms both;
+}
+
+.hero-layer-back-2 {
+  animation: hero-backing-2 var(--dur-slow) var(--ease-out-expo) 290ms both;
+}
+
+/* "Laying a fresh print" animation */
+@keyframes sheet-settle {
+  from {
+    opacity: 0.7;
+    transform: translateY(10px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.paper.animated,
+.hero-sheet-stage .paper.animated {
+  animation: sheet-settle var(--dur-normal) var(--ease-out-expo) both;
+}
+
+/* Form record arrival highlight */
+@keyframes record-enter {
+  0% {
+    opacity: 0;
+    transform: translateY(-6px);
+    border-color: var(--accent-border);
+  }
+  45% {
+    opacity: 1;
+    transform: translateY(0);
+    border-color: var(--accent-border);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    border-color: var(--border-subtle);
+  }
+}
+
+.record.record-new,
+.compact.record-new {
+  animation: record-enter 600ms var(--ease-out-expo) both;
+}
+
+@keyframes panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+dialog[open] {
+  animation: panel-in var(--dur-normal) var(--ease-out-expo) both;
+}
+
+.workspace.tab-change .editor,
+.workspace.tab-change .preview {
+  animation: panel-in var(--dur-normal) var(--ease-out-expo) both;
+}
+
+.suggestion {
+  animation: panel-in var(--dur-fast) var(--ease-out-expo) both;
+}
+
+/* Scroll Reveal & Architectural Rules */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 420ms var(--ease-out-expo) calc(var(--stagger, 0) * 45ms),
+    transform 420ms var(--ease-out-expo) calc(var(--stagger, 0) * 45ms);
+}
+
+[data-reveal="visible"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-rule] {
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform 600ms var(--ease-out-expo);
+}
+
+[data-rule="visible"] {
+  transform: scaleX(1);
+}
+
+/* Sliding tab indicator mappings */
+.auth-tabs {
+  --tab-count: 2;
+}
+
+.auth-tabs:has(#register-tab[aria-pressed="true"]) .tab-indicator {
+  transform: translateX(0%);
+}
+
+.auth-tabs:has(#login-tab[aria-pressed="true"]) .tab-indicator {
+  transform: translateX(100%);
+}
+
+.workspace-tabs {
+  --tab-count: 3;
+}
+
+.workspace-tabs .tab-indicator {
+  transform: translateX(calc(var(--tab-index, 1) * 100%));
+}
+
+.hero-template-tabs {
+  --tab-count: 4;
+}
+
+.hero-template-tabs:has([data-hero-template="classic"][aria-pressed="true"]) .tab-indicator {
+  transform: translateX(0%);
+}
+
+.hero-template-tabs:has([data-hero-template="editorial"][aria-pressed="true"]) .tab-indicator {
+  transform: translateX(100%);
+}
+
+.hero-template-tabs:has([data-hero-template="graphite"][aria-pressed="true"]) .tab-indicator {
+  transform: translateX(200%);
+}
+
+.hero-template-tabs:has([data-hero-template="monolith"][aria-pressed="true"]) .tab-indicator {
+  transform: translateX(300%);
+}
+
+/* Product top sub-nav sliding underline */
+.product-views-tabs button {
+  position: relative;
+  transition: color var(--dur-fast) var(--ease-out-expo);
+}
+
+.product-views-tabs button::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background-color: var(--accent-ink);
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition:
+    opacity var(--dur-fast) var(--ease-out-expo),
+    transform var(--dur-normal) var(--ease-spring-soft);
+}
+
+.product-views-tabs button[aria-pressed="true"]::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+/* Mandatory Reduced Motion Block */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  [data-reveal],
+  [data-rule] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

@@ -1,0 +1,13 @@
+node_modules
+.env*
+data
+tests
+test-results
+*.test.mjs
+*.pdf
+DESIGN*.md
+README*.txt
+README.md
+start.cmd
+персонаж.txt
+public/avatars/Gemini_Generated_Image_*

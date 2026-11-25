@@ -1,0 +1,180 @@
+/* ==========================================================================
+   DESIGN SYSTEM TOKENS — Obsidian Editorial & Architectural Precision
+   ========================================================================== */
+
+:root,
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* Surfaces (deep neutral matte graphite) */
+  --bg-canvas: #090A0D;
+  --bg-surface: #111318;
+  --bg-elevated: #181B22;
+  --bg-workspace: #0D0F14;
+  --bg-hover: #1E222B;
+  --bg-active: #252A36;
+  --bg-header: rgba(9, 10, 13, 0.84);
+  --bg-pill: rgba(24, 27, 34, 0.78);
+
+  /* Typography */
+  --text-primary: #F2F4F8;
+  --text-secondary: #A1A8B8;
+  --text-muted: #7C8496;
+  --text-disabled: #4B5263;
+
+  /* Borders & architectural blueprint grid */
+  --border-subtle: rgba(242, 244, 248, 0.08);
+  --border-default: rgba(242, 244, 248, 0.14);
+  --border-strong: rgba(242, 244, 248, 0.28);
+  --grid-line: rgba(242, 244, 248, 0.06);
+  --grid-crosshair: rgba(242, 244, 248, 0.34);
+
+  /* Primary high-contrast CTA (Platinum) */
+  --cta-bg: #F2F4F8;
+  --cta-bg-hover: #FFFFFF;
+  --cta-bg-active: #DDE2EC;
+  --cta-text: #090A0D;
+
+  /* Signature color accent: Glacial Sapphire */
+  --accent-solid: #2E6EC7;
+  --accent-solid-hover: #3B7EDB;
+  --accent-solid-active: #245AA6;
+  --accent-ink: #72AEF8;
+  --accent-subtle: rgba(114, 174, 248, 0.12);
+  --accent-border: rgba(114, 174, 248, 0.34);
+  --text-on-accent: #FFFFFF;
+
+  /* Controlled static studio light */
+  --studio-glow-primary: rgba(59, 126, 219, 0.20);
+  --studio-glow-secondary: rgba(138, 190, 255, 0.11);
+
+  /* Semantic statuses */
+  --status-success: #52B788;
+  --status-success-bg: rgba(82, 183, 136, 0.12);
+  --status-warning: #E0A458;
+  --status-warning-bg: rgba(224, 164, 88, 0.12);
+  --status-danger: #E06363;
+  --status-danger-bg: rgba(224, 99, 99, 0.14);
+
+  /* Focus */
+  --focus-ring: 0 0 0 2px var(--bg-canvas), 0 0 0 4px var(--accent-ink);
+
+  /* Elevation shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.42), 0 4px 12px rgba(0, 0, 0, 0.24);
+  --shadow-md: 0 6px 16px rgba(0, 0, 0, 0.48), 0 18px 36px rgba(0, 0, 0, 0.36);
+  --shadow-lg: 0 16px 36px rgba(0, 0, 0, 0.58), 0 32px 72px rgba(0, 0, 0, 0.48);
+  --shadow-paper:
+    0 2px 6px rgba(0, 0, 0, 0.50),
+    0 22px 52px rgba(0, 0, 0, 0.62),
+    0 0 0 1px rgba(242, 244, 248, 0.08);
+
+  /* Typography scale */
+  --font-sans: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --text-display: clamp(2.625rem, 5.2vw, 4.5rem);
+  --text-h1: clamp(1.875rem, 3.2vw, 2.875rem);
+  --text-h2: clamp(1.375rem, 2vw, 1.75rem);
+  --text-h3: 1.125rem;
+  --text-stat: clamp(2rem, 3vw, 2.75rem);
+  --text-lead: clamp(1rem, 1.25vw, 1.1875rem);
+  --text-body: 0.9375rem;
+  --text-sm: 0.8125rem;
+  --text-mono-label: 0.6875rem;
+  --text-mono-sm: 0.75rem;
+
+  /* Geometry radii */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-paper: 2px;
+  --radius-pill: 999px;
+
+  /* Motion timings */
+  --dur-instant: 120ms;
+  --dur-fast: 200ms;
+  --dur-normal: 320ms;
+  --dur-editorial: 540ms;
+  --dur-slow: 760ms;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring-soft: cubic-bezier(0.22, 1.12, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* Legacy alias tokens */
+  --bg: var(--bg-canvas);
+  --surface: var(--bg-surface);
+  --stage: var(--bg-workspace);
+  --text: var(--text-primary);
+  --muted: var(--text-secondary);
+  --line: var(--border-subtle);
+  --accent: var(--accent-ink);
+  --error: var(--status-danger);
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+
+  /* Surfaces (cool architectural paper) */
+  --bg-canvas: #F4F6F9;
+  --bg-surface: #FFFFFF;
+  --bg-elevated: #FFFFFF;
+  --bg-workspace: #E6EAF0;
+  --bg-hover: #EDF0F5;
+  --bg-active: #E1E6EE;
+  --bg-header: rgba(244, 246, 249, 0.86);
+  --bg-pill: rgba(255, 255, 255, 0.86);
+
+  /* Typography */
+  --text-primary: #0F1217;
+  --text-secondary: #495160;
+  --text-muted: #656E80;
+  --text-disabled: #9CA4B4;
+
+  /* Borders & blueprint lines */
+  --border-subtle: rgba(15, 18, 23, 0.08);
+  --border-default: rgba(15, 18, 23, 0.14);
+  --border-strong: rgba(15, 18, 23, 0.26);
+  --grid-line: rgba(15, 18, 23, 0.06);
+  --grid-crosshair: rgba(15, 18, 23, 0.28);
+
+  /* Primary CTA (Graphite Monolith) */
+  --cta-bg: #111318;
+  --cta-bg-hover: #1E222B;
+  --cta-bg-active: #090A0D;
+  --cta-text: #FFFFFF;
+
+  /* Signature accent: Deep Architectural Sapphire */
+  --accent-solid: #1E5BB8;
+  --accent-solid-hover: #184A97;
+  --accent-solid-active: #123A78;
+  --accent-ink: #1E5BB8;
+  --accent-subtle: rgba(30, 91, 184, 0.08);
+  --accent-border: rgba(30, 91, 184, 0.28);
+  --text-on-accent: #FFFFFF;
+
+  /* Delicate studio glow on paper */
+  --studio-glow-primary: rgba(30, 91, 184, 0.10);
+  --studio-glow-secondary: rgba(114, 174, 248, 0.12);
+
+  /* Semantic statuses */
+  --status-success: #1F7A52;
+  --status-success-bg: rgba(31, 122, 82, 0.09);
+  --status-warning: #A66B1B;
+  --status-warning-bg: rgba(166, 107, 27, 0.10);
+  --status-danger: #C23636;
+  --status-danger-bg: rgba(194, 54, 54, 0.09);
+
+  /* Focus */
+  --focus-ring: 0 0 0 2px var(--bg-canvas), 0 0 0 4px var(--accent-ink);
+
+  /* Soft paper elevation */
+  --shadow-sm: 0 1px 2px rgba(15, 18, 23, 0.05), 0 4px 12px rgba(15, 18, 23, 0.04);
+  --shadow-md: 0 6px 16px rgba(15, 18, 23, 0.07), 0 16px 34px rgba(15, 18, 23, 0.06);
+  --shadow-lg: 0 14px 32px rgba(15, 18, 23, 0.10), 0 28px 64px rgba(15, 18, 23, 0.09);
+  --shadow-paper:
+    0 1px 3px rgba(15, 18, 23, 0.08),
+    0 16px 40px rgba(15, 18, 23, 0.12),
+    0 0 0 1px rgba(15, 18, 23, 0.08);
+}

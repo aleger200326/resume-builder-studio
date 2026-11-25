@@ -1,0 +1,742 @@
+/* ==========================================================================
+   RESUME DESIGNS — 12 Architectural Print Archetypes (Isolated from Site Theme)
+   ========================================================================== */
+
+.paper.resume-design {
+  --sheet-bg: var(--cv-background, #FFFFFF);
+  --sheet-ink: var(--cv-ink, #111318);
+  --sheet-muted: color-mix(in srgb, var(--sheet-ink) 64%, transparent);
+  --sheet-accent: var(--cv-accent, #1E5BB8);
+  --sheet-sidebar: var(--cv-sidebar, #F2F4F8);
+  --sheet-side-ink: var(--cv-sideInk, #111318);
+  --sheet-rule: color-mix(in srgb, var(--sheet-ink) 14%, transparent);
+
+  background: var(--sheet-bg);
+  color: var(--sheet-ink);
+  min-height: 0;
+  overflow: hidden;
+  border-radius: var(--radius-paper, 2px);
+}
+
+.resume-design .cv-sheet {
+  padding: 0;
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: clamp(8px, 1.85cqw, 13.5px);
+  line-height: 1.46;
+  min-height: 141.43cqw;
+  letter-spacing: 0;
+  color: var(--sheet-ink);
+}
+
+.resume-design.mobile .cv-sheet {
+  font-size: clamp(10px, 2.85cqw, 14px);
+  min-height: 177.14cqw;
+}
+
+.resume-design .cv-identity {
+  margin: 0;
+  padding: 7cqw 7cqw 4.5cqw;
+  display: flex;
+  align-items: center;
+  gap: 4cqw;
+  border: 0;
+  background: none;
+  color: inherit;
+  flex-direction: row;
+}
+
+.resume-design .cv-name {
+  min-width: 0;
+  flex: 1;
+}
+
+.resume-design .cv-name h2 {
+  font-family: inherit;
+  font-size: 4.5cqw;
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: var(--sheet-accent);
+  margin: 0;
+}
+
+.resume-design .cv-name .role {
+  font-size: 1.04em;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  margin: 1.4cqw 0 0;
+  color: var(--sheet-ink);
+  opacity: 0.84;
+}
+
+.resume-design .cv-identity .cv-photo {
+  width: 16cqw;
+  height: 16cqw;
+  border-radius: 2px;
+  object-fit: cover;
+  flex-shrink: 0;
+  margin: 0;
+}
+
+.resume-design .cv-main {
+  padding: 4cqw 7cqw 7cqw;
+  min-width: 0;
+}
+
+.resume-design .cv-sidebar {
+  min-width: 0;
+  padding: 5.5cqw 4.2cqw;
+  background: var(--sheet-sidebar);
+  color: var(--sheet-side-ink);
+}
+
+.resume-design .cv-content {
+  display: grid;
+  grid-template-columns: 32% minmax(0, 1fr);
+  min-height: 100cqw;
+}
+
+.resume-design .cv-content .cv-main {
+  padding: 5.5cqw 5.5cqw 7cqw;
+}
+
+.resume-design .cv-sheet h3 {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.86em;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sheet-accent);
+  margin: 0 0 2.2cqw;
+  padding: 0 0 1.1cqw;
+  border-bottom: 1px solid color-mix(in srgb, var(--sheet-accent) 28%, transparent);
+  break-after: avoid;
+}
+
+.resume-design .cv-sheet .cv-sidebar h3 {
+  color: inherit;
+  border-bottom-color: color-mix(in srgb, currentColor 24%, transparent);
+  font-size: 0.8em;
+  letter-spacing: 0.1em;
+}
+
+.resume-design .cv-sheet section {
+  margin: 0 0 4.6cqw;
+}
+
+.resume-design .cv-sheet .entry {
+  margin: 0 0 2.4cqw;
+  break-inside: avoid;
+}
+
+.resume-design .cv-sheet p {
+  white-space: pre-wrap;
+  margin: 0 0 0.75cqw;
+}
+
+.resume-design .cv-sheet .meta {
+  font-family: var(--font-mono, monospace);
+  font-variant-numeric: tabular-nums;
+  opacity: 0.72;
+  font-size: 0.84em;
+  color: inherit;
+}
+
+.resume-design .cv-sheet .entry strong {
+  font-size: 1.03em;
+  font-weight: 600;
+}
+
+.resume-design .cv-sheet a {
+  color: inherit;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.resume-design .cv-sidebar .resume-contacts p {
+  font-size: 0.9em;
+}
+
+/* 1. CLASSIC — Editorial Classic */
+.resume-design.classic .cv-identity {
+  flex-direction: column;
+  text-align: center;
+  padding-bottom: 3.5cqw;
+}
+
+.resume-design.classic .cv-photo {
+  width: 14cqw;
+  height: 14cqw;
+  border-radius: 50%;
+}
+
+.resume-design.classic .cv-name h2 {
+  font-size: 5.2cqw;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.resume-design.classic .cv-main {
+  padding-top: 0;
+}
+
+.resume-design.classic .resume-contacts {
+  text-align: center;
+  border-top: 1px solid var(--sheet-accent);
+  border-bottom: 1px solid color-mix(in srgb, var(--sheet-accent) 40%, transparent);
+  padding: 2cqw 0;
+}
+
+.resume-design.classic .resume-contacts h3 {
+  display: none;
+}
+
+.resume-design.classic .resume-contacts .entry {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.8cqw 2.6cqw;
+  margin: 0;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.86em;
+}
+
+.resume-design.classic h3 {
+  text-align: center;
+  letter-spacing: 0.16em;
+}
+
+/* 2. GRAPHITE — Swiss Slate Sidebar */
+.resume-design.graphite .cv-content {
+  grid-template-columns: 30% minmax(0, 1fr);
+  min-height: 141.43cqw;
+}
+
+.resume-design.graphite .cv-sidebar {
+  padding-top: 7cqw;
+}
+
+.resume-design.graphite .cv-identity {
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 0 6cqw;
+  gap: 3.5cqw;
+}
+
+.resume-design.graphite .cv-name h2 {
+  color: #F2F4F8;
+  font-size: 4cqw;
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+}
+
+.resume-design.graphite .cv-photo {
+  width: 22cqw;
+  height: 22cqw;
+  border: 1px solid rgba(242, 244, 248, 0.25);
+}
+
+.resume-design.graphite .cv-main {
+  padding-top: 7cqw;
+}
+
+.resume-design.graphite .cv-sidebar .role {
+  font-size: 0.92em;
+  color: rgba(242, 244, 248, 0.82);
+}
+
+/* 3. EDITORIAL — Architectural Monograph */
+.resume-design.editorial .cv-content {
+  grid-template-columns: minmax(0, 1fr) 31%;
+  min-height: 141.43cqw;
+}
+
+.resume-design.editorial .cv-sidebar {
+  grid-column: 2;
+  grid-row: 1;
+  padding-top: 8cqw;
+  border-left: 1px solid color-mix(in srgb, var(--sheet-accent) 18%, transparent);
+}
+
+.resume-design.editorial .cv-main {
+  grid-column: 1;
+  grid-row: 1;
+  padding: 7cqw 5.5cqw;
+}
+
+.resume-design.editorial .cv-identity {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-start;
+  padding: 0 0 5cqw;
+  gap: 3.5cqw;
+  border-bottom: 1px solid color-mix(in srgb, var(--sheet-accent) 24%, transparent);
+  margin-bottom: 4cqw;
+}
+
+.resume-design.editorial .cv-name h2 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 6cqw;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.resume-design.editorial .cv-photo {
+  width: 22cqw;
+  height: 25cqw;
+  border-radius: 2px;
+}
+
+.resume-design.editorial h3 {
+  font-family: Georgia, 'Times New Roman', serif;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 1.24em;
+  font-weight: 400;
+}
+
+.resume-design.editorial .cv-sidebar h3 {
+  font-family: var(--font-mono, monospace);
+  text-transform: uppercase;
+  font-size: 0.8em;
+  letter-spacing: 0.1em;
+}
+
+/* 4. ARCHITECT — Structural Sapphire Header */
+.resume-design.architect .cv-identity {
+  background: var(--sheet-accent);
+  color: #FFFFFF;
+  flex-direction: row-reverse;
+  padding: 6.5cqw 7cqw;
+}
+
+.resume-design.architect .cv-name h2 {
+  color: #FFFFFF;
+  font-size: 5.4cqw;
+}
+
+.resume-design.architect .cv-name .role {
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.resume-design.architect .cv-photo {
+  width: 18cqw;
+  height: 18cqw;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.resume-design.architect .cv-content {
+  grid-template-columns: 28% minmax(0, 1fr);
+}
+
+.resume-design.architect h3 {
+  border-bottom: 2px solid var(--sheet-accent);
+  padding-bottom: 1.2cqw;
+}
+
+.resume-design.architect .cv-main .entry {
+  border-left: 2px solid color-mix(in srgb, var(--sheet-accent) 26%, transparent);
+  padding-left: 2cqw;
+}
+
+/* 5. PORTFOLIO — Modern Slate Sidebar */
+.resume-design.portfolio .cv-content {
+  grid-template-columns: 34% minmax(0, 1fr);
+  min-height: 141.43cqw;
+}
+
+.resume-design.portfolio .cv-sidebar {
+  padding: 7cqw 4.2cqw;
+}
+
+.resume-design.portfolio .cv-identity {
+  padding: 0 0 5cqw;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4cqw;
+}
+
+.resume-design.portfolio .cv-photo {
+  width: 24cqw;
+  height: 26cqw;
+  border-radius: 3px;
+}
+
+.resume-design.portfolio .cv-name h2 {
+  font-size: 4.5cqw;
+  color: var(--sheet-side-ink);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+}
+
+.resume-design.portfolio .cv-name .role {
+  font-size: 0.92em;
+}
+
+.resume-design.portfolio .cv-main {
+  padding-top: 7cqw;
+}
+
+.resume-design.portfolio .cv-main h3 {
+  font-family: var(--font-sans, sans-serif);
+  font-size: 1.12em;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: -0.015em;
+  border-bottom: 1px solid color-mix(in srgb, var(--sheet-accent) 22%, transparent);
+}
+
+.resume-design.portfolio .resume-portfolio {
+  border: 1px solid color-mix(in srgb, var(--sheet-accent) 28%, transparent);
+  padding: 2.2cqw;
+  border-radius: 3px;
+}
+
+/* 6. MONOLITH — Technical Mono Dark Edition */
+.resume-design.monolith .cv-content {
+  grid-template-columns: minmax(0, 1fr) 31%;
+}
+
+.resume-design.monolith .cv-sidebar {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.resume-design.monolith .cv-main {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.resume-design.monolith .cv-identity {
+  border-bottom: 1px solid color-mix(in srgb, var(--sheet-accent) 30%, transparent);
+  flex-direction: row-reverse;
+  padding: 6.5cqw 5.5cqw;
+}
+
+.resume-design.monolith .cv-name h2 {
+  font-size: 5.8cqw;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  color: var(--sheet-accent);
+}
+
+.resume-design.monolith .cv-name .role {
+  color: var(--sheet-ink);
+  font-family: var(--font-mono, monospace);
+  font-size: 0.92em;
+}
+
+.resume-design.monolith .cv-photo {
+  filter: grayscale(1) contrast(1.05);
+  width: 19cqw;
+  height: 21cqw;
+  border: 1px solid color-mix(in srgb, var(--sheet-accent) 35%, transparent);
+}
+
+.resume-design.monolith h3 {
+  color: var(--sheet-accent);
+  border-bottom-color: color-mix(in srgb, var(--sheet-accent) 28%, transparent);
+}
+
+.resume-design.monolith .cv-sidebar h3 {
+  color: var(--sheet-accent);
+}
+
+/* 7. CAREER — Compact Two-Column */
+.resume-design.career .cv-identity {
+  background: var(--sheet-sidebar);
+  border-bottom: 1px solid color-mix(in srgb, var(--sheet-accent) 24%, transparent);
+  flex-direction: row-reverse;
+  padding: 6cqw 7cqw;
+}
+
+.resume-design.career .cv-photo {
+  width: 20cqw;
+  height: 20cqw;
+  border-radius: 50%;
+  border: 2px solid #FFFFFF;
+}
+
+.resume-design.career .cv-name h2 {
+  font-size: 5.2cqw;
+  color: var(--sheet-ink);
+}
+
+.resume-design.career .cv-content {
+  grid-template-columns: minmax(0, 1fr) 32%;
+}
+
+.resume-design.career .cv-sidebar {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.resume-design.career .cv-main {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.resume-design.career .resume-experience .entry {
+  border-left: 1.5px solid color-mix(in srgb, var(--sheet-accent) 45%, transparent);
+  padding-left: 2.5cqw;
+  position: relative;
+}
+
+.resume-design.career .resume-experience .entry::before {
+  content: '';
+  position: absolute;
+  left: -0.7cqw;
+  top: 0.35cqw;
+  background: var(--sheet-accent);
+  width: 1.15cqw;
+  height: 1.15cqw;
+  border-radius: 50%;
+}
+
+.resume-design.career h3 {
+  border: 0;
+  letter-spacing: 0.12em;
+}
+
+/* 8. NORDIC — Pale Alabaster & Petrol Left Rail */
+.resume-design.nordic .cv-content {
+  grid-template-columns: 31% minmax(0, 1fr);
+  min-height: 141.43cqw;
+}
+
+.resume-design.nordic .cv-sidebar {
+  padding: 7cqw 4.5cqw;
+  border-right: 1px solid color-mix(in srgb, var(--sheet-accent) 18%, transparent);
+}
+
+.resume-design.nordic .cv-main {
+  padding: 7cqw 5.8cqw;
+}
+
+.resume-design.nordic .cv-identity {
+  padding: 0 0 4.5cqw;
+  margin-bottom: 4cqw;
+  border-bottom: 2px solid var(--sheet-accent);
+  gap: 3.5cqw;
+}
+
+.resume-design.nordic .cv-photo {
+  width: 17cqw;
+  height: 17cqw;
+  border-radius: 50%;
+}
+
+.resume-design.nordic .cv-name h2 {
+  font-size: 4.8cqw;
+  letter-spacing: -0.025em;
+  color: var(--sheet-ink);
+}
+
+.resume-design.nordic h3 {
+  border-bottom: 1px solid color-mix(in srgb, var(--sheet-accent) 30%, transparent);
+  letter-spacing: 0.14em;
+}
+
+/* 9. OBSIDIAN — Dark Tech Sheet & Ice-Blue Right Sidebar */
+.resume-design.obsidian .cv-content {
+  grid-template-columns: minmax(0, 1fr) 33%;
+  min-height: 141.43cqw;
+}
+
+.resume-design.obsidian .cv-sidebar {
+  grid-column: 2;
+  grid-row: 1;
+  padding: 6.5cqw 4.5cqw;
+  border-left: 1px solid color-mix(in srgb, var(--sheet-accent) 26%, transparent);
+}
+
+.resume-design.obsidian .cv-main {
+  grid-column: 1;
+  grid-row: 1;
+  padding: 6.5cqw 5.5cqw;
+}
+
+.resume-design.obsidian .cv-identity {
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 0 4.5cqw;
+  gap: 3.2cqw;
+}
+
+.resume-design.obsidian .cv-photo {
+  width: 21cqw;
+  height: 21cqw;
+  border-radius: 4px;
+  border: 1px solid color-mix(in srgb, var(--sheet-accent) 45%, transparent);
+}
+
+.resume-design.obsidian .cv-name h2 {
+  font-size: 4.1cqw;
+  color: var(--sheet-accent);
+  line-height: 1.12;
+}
+
+.resume-design.obsidian .cv-sidebar .role {
+  color: #C7D0E0;
+}
+
+.resume-design.obsidian h3 {
+  color: var(--sheet-accent);
+  border-bottom-color: color-mix(in srgb, var(--sheet-accent) 32%, transparent);
+}
+
+/* 10. ATELIER — Warm Gallery Top Band & Bronze Serif */
+.resume-design.atelier .cv-identity {
+  background: var(--sheet-sidebar);
+  border-bottom: 2px solid var(--sheet-accent);
+  padding: 6.5cqw 7cqw;
+  gap: 4.5cqw;
+}
+
+.resume-design.atelier .cv-photo {
+  width: 17cqw;
+  height: 20cqw;
+  border-radius: 2px;
+}
+
+.resume-design.atelier .cv-name h2 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 5.4cqw;
+  font-weight: 400;
+  color: var(--sheet-ink);
+}
+
+.resume-design.atelier h3 {
+  font-family: Georgia, 'Times New Roman', serif;
+  text-transform: none;
+  font-size: 1.2em;
+  letter-spacing: 0.01em;
+  border-bottom: 1px solid color-mix(in srgb, var(--sheet-accent) 35%, transparent);
+}
+
+.resume-design.atelier .cv-main {
+  padding-top: 5cqw;
+}
+
+/* 11. SWISS — Single-Column International Typographic Grid */
+.resume-design.swiss .cv-identity {
+  padding: 7cqw 7cqw 4.5cqw;
+  border-top: 1.4cqw solid var(--sheet-accent);
+  border-bottom: 1px solid #D5D7DB;
+  flex-direction: row-reverse;
+}
+
+.resume-design.swiss .cv-name h2 {
+  font-size: 5.6cqw;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: var(--sheet-ink);
+}
+
+.resume-design.swiss .cv-photo {
+  width: 16cqw;
+  height: 16cqw;
+  border-radius: 0;
+  filter: grayscale(1) contrast(1.06);
+}
+
+.resume-design.swiss h3 {
+  color: var(--sheet-accent);
+  font-weight: 600;
+  border-bottom: 1.5px solid var(--sheet-ink);
+}
+
+/* 12. EMERALD — Deep Forest Executive Sidebar */
+.resume-design.emerald .cv-content {
+  grid-template-columns: 33% minmax(0, 1fr);
+  min-height: 141.43cqw;
+}
+
+.resume-design.emerald .cv-sidebar {
+  padding: 7cqw 4.5cqw;
+}
+
+.resume-design.emerald .cv-identity {
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 0 5cqw;
+  gap: 3.5cqw;
+}
+
+.resume-design.emerald .cv-photo {
+  width: 21cqw;
+  height: 21cqw;
+  border-radius: 50%;
+  border: 2px solid rgba(242, 247, 244, 0.35);
+}
+
+.resume-design.emerald .cv-name h2 {
+  font-size: 4.2cqw;
+  color: #FFFFFF;
+}
+
+.resume-design.emerald .cv-sidebar .role {
+  color: rgba(242, 247, 244, 0.8);
+}
+
+.resume-design.emerald .cv-main {
+  padding: 7cqw 5.5cqw;
+}
+
+.resume-design.emerald h3 {
+  border-bottom: 1px solid color-mix(in srgb, var(--sheet-accent) 32%, transparent);
+}
+
+/* Mobile Layout Overrides */
+.resume-design.mobile .cv-content {
+  grid-template-columns: 35% minmax(0, 1fr);
+}
+
+.resume-design.mobile.editorial .cv-content,
+.resume-design.mobile.monolith .cv-content,
+.resume-design.mobile.career .cv-content,
+.resume-design.mobile.obsidian .cv-content {
+  grid-template-columns: minmax(0, 1fr) 34%;
+}
+
+/* Print & PDF Export Cleanup */
+@media print {
+  body {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+  }
+
+  .account-bar,
+  .top,
+  .product-views,
+  .editor,
+  .preview-head,
+  .appearance,
+  .workflow-actions,
+  .mobile-action,
+  .showroom,
+  .jobs-step {
+    display: none !important;
+  }
+
+  .workspace,
+  .preview,
+  .stage {
+    display: block !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    background-image: none !important;
+    border: 0 !important;
+  }
+
+  .paper.resume-design {
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    max-width: none !important;
+    width: 100% !important;
+  }
+}
